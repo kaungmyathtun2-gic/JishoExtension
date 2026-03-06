@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jisho Quick Lookup</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="panel">
+      <header class="brand">
+        <img src="../assets/logo.svg" alt="Jisho Quick Lookup logo" class="brand-logo" />
+        <div>
+          <h1>Jisho Quick Lookup</h1>
+          <p class="hint">Pick text on page and preview meanings instantly.</p>
+        </div>
+      </header>
+
+      <form id="lookup-form">
+        <input id="query" type="text" placeholder="Type Japanese word..." autocomplete="off" aria-label="Search query" />
+        <div class="actions">
+          <button type="submit" id="preview-btn">Preview</button>
+          <button type="button" id="open-btn" class="ghost">Open Jisho</button>
+        </div>
+      </form>
+
+      <section id="results" class="results" aria-live="polite"></section>
+      <p id="status" aria-live="polite"></p>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

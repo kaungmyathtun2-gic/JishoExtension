@@ -1,0 +1,15 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Jisho Quick Lookup</title>
+  <desc id="desc">Stylized red seal with magnifier</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d64045"/>
+      <stop offset="1" stop-color="#9f1d20"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#bg)"/>
+  <circle cx="56" cy="56" r="24" fill="#fff3de"/>
+  <circle cx="56" cy="56" r="15" fill="none" stroke="#283447" stroke-width="6"/>
+  <path d="M68 68 L87 87" stroke="#283447" stroke-width="7" stroke-linecap="round"/>
+  <path d="M44 57 C50 50, 61 48, 67 52" stroke="#ca2f34" stroke-width="4" stroke-linecap="round" fill="none"/>
+</svg>

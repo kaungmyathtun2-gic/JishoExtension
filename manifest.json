@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "Jisho Quick Lookup",
+  "version": "1.1.0",
+  "description": "Look up selected Japanese text with instant inline preview and Jisho search.",
+  "action": {
+    "default_title": "Jisho Quick Lookup",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "assets/icon16.png",
+      "32": "assets/icon32.png",
+      "48": "assets/icon48.png"
+    }
+  },
+  "icons": {
+    "16": "assets/icon16.png",
+    "32": "assets/icon32.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "contextMenus",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://jisho.org/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content/content.js"
+      ],
+      "css": [
+        "content/content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "open-jisho-from-selection": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+J"
+      },
+      "description": "Search selected text on Jisho"
+    }
+  }
+}

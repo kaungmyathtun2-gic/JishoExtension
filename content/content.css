@@ -1,0 +1,91 @@
+#jisho-mini {
+  position: absolute;
+  z-index: 2147483646;
+  display: none;
+  min-width: 240px;
+  max-width: 320px;
+  border-radius: 12px;
+  border: 1px solid #d5c8b3;
+  box-shadow: 0 12px 32px #00000026;
+  background: linear-gradient(145deg, #fff6e6 0%, #fff 100%);
+  color: #152238;
+  font-family: "Trebuchet MS", "Gill Sans", sans-serif;
+  overflow: hidden;
+}
+
+#jisho-mini .mini-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 8px 10px;
+  background: #ffe2bc;
+  border-bottom: 1px solid #d5c8b3;
+}
+
+#jisho-mini .mini-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+#jisho-mini button {
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+#jisho-mini .open-btn {
+  background: #ca2f34;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+#jisho-mini .close-btn {
+  width: 22px;
+  height: 22px;
+  background: #ffffff9f;
+  color: #2f2f2f;
+}
+
+#jisho-mini .mini-content {
+  padding: 9px 10px 10px;
+  display: grid;
+  gap: 8px;
+}
+
+#jisho-mini .mini-entry {
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #d6c8b3;
+}
+
+#jisho-mini .mini-entry:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+#jisho-mini .word {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+#jisho-mini .reading {
+  margin-left: 6px;
+  font-size: 12px;
+  color: #6d5f49;
+  font-weight: 400;
+}
+
+#jisho-mini .meaning {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #2b3340;
+}
+
+#jisho-mini .mini-status {
+  font-size: 12px;
+  color: #5d564a;
+}
