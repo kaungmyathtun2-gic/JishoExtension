@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Jisho Quick Lookup",
-  "version": "1.1.0",
+  "version": "1.0",
   "description": "Look up selected Japanese text with instant inline preview and Jisho search.",
   "action": {
     "default_title": "Jisho Quick Lookup",
