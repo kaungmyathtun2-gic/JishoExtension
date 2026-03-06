@@ -1,4 +1,4 @@
-# Jisho Quick Lookup (Edge Extension)
+# Jisho Quick Lookup (Browser Extension)
 
 A Browser extension that gives you instant Japanese dictionary previews and one-click Jisho searches for Japanese texts.
 
