@@ -13,7 +13,7 @@ A Browser extension that gives you instant Japanese dictionary previews and one-
 
 ## Load in Microsoft Edge
 
-1. Open Edge or Chrome and go to `edge://extensions`.
+1. Open Edge or Chrome and go to `edge://extensions` or `chrome://extensions`.
 2. Turn on **Developer mode**.
 3. Click **Load unpacked**.
 4. Select the project folder:
