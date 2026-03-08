@@ -1,4 +1,6 @@
 let activeQuery = "";
+let inlinePreviewEnabled = true;
+const INLINE_PREVIEW_KEY = "inlinePreviewEnabled";
 
 const mini = document.createElement("section");
 mini.id = "jisho-mini";
@@ -32,6 +34,26 @@ function hasRuntimeContext() {
     return false;
   }
 }
+
+function loadInlinePreviewState() {
+  chrome.storage.local.get({ [INLINE_PREVIEW_KEY]: true }, (stored) => {
+    inlinePreviewEnabled = Boolean(stored[INLINE_PREVIEW_KEY]);
+    if (!inlinePreviewEnabled) {
+      hideMini();
+    }
+  });
+}
+
+chrome.storage.onChanged.addListener((changes, area) => {
+  if (area !== "local" || !(INLINE_PREVIEW_KEY in changes)) {
+    return;
+  }
+
+  inlinePreviewEnabled = Boolean(changes[INLINE_PREVIEW_KEY].newValue);
+  if (!inlinePreviewEnabled) {
+    hideMini();
+  }
+});
 
 function escapeHtml(value) {
   return String(value)
@@ -162,6 +184,10 @@ openButton.addEventListener("click", () => openJishoTab(activeQuery));
 closeButton.addEventListener("click", hideMini);
 
 document.addEventListener("mouseup", () => {
+  if (!inlinePreviewEnabled) {
+    hideMini();
+    return;
+  }
   void showForSelection();
 });
 
@@ -170,3 +196,5 @@ document.addEventListener("mousedown", (event) => {
     hideMini();
   }
 });
+
+loadInlinePreviewState();

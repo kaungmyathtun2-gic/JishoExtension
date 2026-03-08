@@ -7,6 +7,7 @@ A Browser extension that gives you instant Japanese dictionary previews and one-
 - Floating mini preview when you select text on a page
 - Inline definition preview (top dictionary entries) without leaving the page
 - Polished popup with branded UI and dictionary result cards
+- Header toggle in popup to enable/disable inline page preview
 - Auto-prefill popup input from currently selected text
 - Right-click context menu: `Search Jisho for "..."`
 - Keyboard shortcut: `Ctrl+Shift+J`
@@ -24,6 +25,7 @@ A Browser extension that gives you instant Japanese dictionary previews and one-
 - Use **Open** in the floating card to jump to full Jisho results.
 - Select text on a page and right-click to search on Jisho.
 - Click the extension icon and use **Preview** to fetch quick definitions in-popup.
+- Use the **On/Off** toggle in the popup header to control floating inline preview on pages.
 - Use **Open Jisho** in popup to open full results in a new tab.
 - Use `Ctrl+Shift+J` to search selected text directly.
 

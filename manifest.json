@@ -22,7 +22,8 @@
     "activeTab",
     "tabs",
     "contextMenus",
-    "scripting"
+    "scripting",
+    "storage"
   ],
   "host_permissions": [
     "https://jisho.org/*"

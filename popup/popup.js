@@ -3,6 +3,36 @@ const statusText = document.getElementById("status");
 const form = document.getElementById("lookup-form");
 const resultsContainer = document.getElementById("results");
 const openButton = document.getElementById("open-btn");
+const previewToggle = document.getElementById("preview-toggle");
+
+const INLINE_PREVIEW_KEY = "inlinePreviewEnabled";
+
+function getStorage(values) {
+  return new Promise((resolve) => chrome.storage.local.get(values, resolve));
+}
+
+function setStorage(values) {
+  return new Promise((resolve) => chrome.storage.local.set(values, resolve));
+}
+
+function renderPreviewToggle(isEnabled) {
+  previewToggle.setAttribute("aria-pressed", String(isEnabled));
+  previewToggle.textContent = isEnabled ? "On" : "Off";
+  previewToggle.setAttribute("aria-label", `Inline preview ${isEnabled ? "enabled" : "disabled"}`);
+}
+
+async function loadPreviewToggle() {
+  const stored = await getStorage({ [INLINE_PREVIEW_KEY]: true });
+  renderPreviewToggle(Boolean(stored[INLINE_PREVIEW_KEY]));
+}
+
+async function toggleInlinePreview() {
+  const current = previewToggle.getAttribute("aria-pressed") === "true";
+  const next = !current;
+  await setStorage({ [INLINE_PREVIEW_KEY]: next });
+  renderPreviewToggle(next);
+  setStatus(`Inline preview ${next ? "enabled" : "disabled"}.`);
+}
 
 function setStatus(message) {
   statusText.textContent = message;
@@ -111,5 +141,10 @@ openButton.addEventListener("click", () => {
   openJisho(queryInput.value);
 });
 
+previewToggle.addEventListener("click", () => {
+  void toggleInlinePreview();
+});
+
 void prefillFromSelection();
+void loadPreviewToggle();
 queryInput.focus();

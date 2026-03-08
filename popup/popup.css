@@ -28,6 +28,10 @@ body {
   margin-bottom: 10px;
 }
 
+.brand > div {
+  flex: 1;
+}
+
 .brand-logo {
   width: 42px;
   height: 42px;
@@ -74,6 +78,21 @@ button {
 
 button:hover {
   background: var(--accent-strong);
+}
+
+.toggle {
+  min-width: 52px;
+  padding: 6px 8px;
+}
+
+.toggle[aria-pressed="false"] {
+  background: #fff8;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.toggle[aria-pressed="false"]:hover {
+  background: #fff;
 }
 
 .actions {
